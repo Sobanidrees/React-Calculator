@@ -6,7 +6,7 @@ export default function Calculator() {
   const [oponend, setoponend] = useState(null);
   const [full, setFull] = useState("");
   const [Checked, setChecked] = useState(false);
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(null);
   const [isAns, setAns] = useState(false);
 
   const operatorHandler = (oper) => {
@@ -20,7 +20,7 @@ export default function Calculator() {
       }
     } else {
       setFull("");
-      setResult(0);
+      setResult(null);
       setAns(false);
     }
   };
@@ -36,7 +36,7 @@ export default function Calculator() {
       }
     } else {
       setFull("");
-      setResult(0);
+      setResult(null);
       setAns(false);
     }
   };
@@ -51,7 +51,7 @@ export default function Calculator() {
       }
     } else {
       setFull("");
-      setResult(0);
+      setResult(null);
       setAns(false);
     }
   };
@@ -76,7 +76,7 @@ export default function Calculator() {
       }
     } else {
       setFull("");
-      setResult(0);
+      setResult(null);
       setAns(false);
     }
   };
@@ -110,62 +110,61 @@ export default function Calculator() {
     setAns(false);
     setoponend(null);
     setChecked(false);
-    setResult(0);
+    setResult(null);
   };
 
   return (
     <div className="Cointainer">
-      <table className="Table">
-        <tr className="upper">
-          <th>{full}</th>
-        </tr>
-        <tr className="lower">
-          <th>{result}</th>
-        </tr>
-        <tr>
-          <td className="Operator" onClick={clearHandler}>
-            CLEAR
-          </td>
-          <td className="Operator" onClick={delHandler}>
-            DEL
-          </td>
-          <td className="Operator" onClick={() => operatorHandler("+")}>
-            +
-          </td>
-        </tr>
-        <tr>
-          <td onClick={() => numHandler(9)}>9</td>
-          <td onClick={() => numHandler(8)}>8</td>
-          <td onClick={() => numHandler(7)}>7</td>
-          <td className="Operator" onClick={() => operatorHandler("-")}>
-            -
-          </td>
-        </tr>
-        <tr>
-          <td onClick={() => numHandler(6)}>6</td>
-          <td onClick={() => numHandler(5)}>5</td>
-          <td onClick={() => numHandler(4)}>4</td>
-          <td className="Operator" onClick={() => operatorHandler("*")}>
-            *
-          </td>
-        </tr>
-        <tr>
-          <td onClick={() => numHandler(3)}>3</td>
-          <td onClick={() => numHandler(2)}>2</td>
-          <td onClick={() => numHandler(1)}>1</td>
-          <td className="Operator" onClick={() => operatorHandler("/")}>
-            /
-          </td>
-        </tr>
-        <tr>
-          <td onClick={zeroHandler}>0</td>
-          <td onClick={pointHandler}>.</td>
-          <td>%</td>
-          <td className="Operator" onClick={equalHandler}>
-            =
-          </td>
-        </tr>
-      </table>
+      <div className="tabCoint">
+        <div className="full">{full}</div>
+        <div className="result">{result}</div>
+        <table className="Table">
+          
+          <tr>
+            <td className="Operator" onClick={clearHandler}>
+              CLEAR
+            </td>
+            <td className="Operator" onClick={delHandler}>
+              DEL
+            </td>
+            <td className="Operator" onClick={() => operatorHandler("+")}>
+              +
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => numHandler(9)}>9</td>
+            <td onClick={() => numHandler(8)}>8</td>
+            <td onClick={() => numHandler(7)}>7</td>
+            <td className="Operator" onClick={() => operatorHandler("-")}>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => numHandler(6)}>6</td>
+            <td onClick={() => numHandler(5)}>5</td>
+            <td onClick={() => numHandler(4)}>4</td>
+            <td className="Operator" onClick={() => operatorHandler("*")}>
+              *
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => numHandler(3)}>3</td>
+            <td onClick={() => numHandler(2)}>2</td>
+            <td onClick={() => numHandler(1)}>1</td>
+            <td className="Operator" onClick={() => operatorHandler("/")}>
+              /
+            </td>
+          </tr>
+          <tr>
+            <td onClick={zeroHandler}>0</td>
+            <td onClick={pointHandler}>.</td>
+            <td>%</td>
+            <td className="Operator" onClick={equalHandler}>
+              =
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   );
 }

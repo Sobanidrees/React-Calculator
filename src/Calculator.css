@@ -9,14 +9,17 @@
     flex-direction: column;
     align-items: center;
 
-}
 
+}
+.tabCoint{
+    border: 1px solid black;
+    width: 21rem;
+}
 .Table {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    width: 21rem;
+   
 
 }
 
@@ -38,16 +41,31 @@ td {
     background-color: orange;
 }
 
-.Result {}
+.full{
 
-.upper {
+    padding: .6rem 1rem;
     display: flex;
-    align-items: flex-start;
-    background-color: aliceblue;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: lightgray;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 2rem;
+    height: 3rem;
+
 }
+.result{
+        height: 3rem;
+        background-color: lightgray;
+        padding: .6rem 1rem;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-end;
+       font-size: 2rem;
+        font-weight: bolder;
+        color: rgba(26, 26, 175, 0.589);
+        overflow-wrap: break-word;
+        
 
-.lower {
-    display: flex;
-    align-items: flex-start;
-    background-color: aliceblue;
 }
